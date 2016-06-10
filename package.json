@@ -4,9 +4,10 @@
   "description": "An Application Shell for generating Angular Applications with Webpack and ES6",
   "main": "app.js",
   "scripts": {
-    "dev": "export NODE_ENV=development && webpack-dev-server --devtool=source-map --progress --colors --port=9000 --content-base app",
+    "dev": "export NODE_ENV=development && webpack-dev-server --devtool=source-map --progress --colors --content-base app",
     "test": "export NODE_ENV=test && karma start",
-    "build": "export NODE_ENV=production && node node_modules/.bin/webpack && cp app/index.html dist/index.html"
+    "build": "export NODE_ENV=production && node node_modules/.bin/webpack && cp app/index.html dist/index.html",
+    "start": "node ./bin/www" 
   },
   "keywords": [
     "angular",
@@ -18,7 +19,9 @@
   "license": "ISC",
   "devDependencies": {
     "angular-mocks": "^1.4.7",
+    "body-parser": "~1.8.1",
     "chai": "^3.3.0",
+    "express": "~4.9.0",
     "file-loader": "^0.8.4",
     "gulp": "^3.9.0",
     "gulp-clean": "^0.3.1",

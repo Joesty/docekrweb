@@ -78,4 +78,8 @@ switch (nodeEnvironment) {
     console.warn('Unknown or Undefigned Node Environment. Please refer to package.json for available build commands.');
 }
 
+config.devServer = {
+  port: 80
+}
+
 module.exports = config; 
