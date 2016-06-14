@@ -36,6 +36,13 @@ export default class HomeController {
         }
       );
     };
+    $scope.deleteContainer = function (id){
+      users.deleteContainer(id).then(
+        function(resolve){
+          getData();
+        }
+      );
+    }; 
     getData();
   }
 }

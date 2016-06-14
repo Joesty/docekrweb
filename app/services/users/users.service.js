@@ -62,6 +62,20 @@ let usersService = function usersServiceFn ($http, $q) {
       );
       return deferred.promise;
     };
+    
+    exports.deleteContainer = function (id) {
+      var deferred = $q.defer();
+      var api_url = '/containers/' + id + '?v=1';
+      $http.delete(url+api_url).then(
+        function(response){
+          deferred.resolve(response);
+        }, 
+        function(error){
+          deferred.reject(error);
+        }
+      );
+      return deferred.promise;
+    };
 
     return exports;
 };

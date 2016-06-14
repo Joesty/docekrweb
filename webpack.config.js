@@ -79,7 +79,7 @@ switch (nodeEnvironment) {
 }
 
 config.devServer = {
-  port: 80
+  port: 3000
 }
 
 module.exports = config; 
