@@ -8,9 +8,13 @@
     <md-subheader class="md-no-sticky">Select VM</md-subheader>
     <md-list-item class="md-3-line" ng-repeat="container in containers"">
       <div class="md-list-item-text" flex layout="row">
-        <div flex='33'>{{container.Names[0]}}</div>
-        <div flex='33'>{{container.Status}}</div>
-        <div flex='33'>{{container.Image}}</div>
+        <div flex='25'>{{container.Names[0]}}</div>
+        <div flex='25'>{{container.Status}}</div>
+        <div flex='25'>{{container.Image}}</div>
+        <div flex='25'>
+          <md-button ng-if="!container.start" class="md-raised md-primary" ng-click="start(container.Id, $index)">Start</md-button>
+          <md-button ng-if="container.start" class="md-raised md-warn" ng-click="stop(container.Id, $index)">Stop</md-button>
+        </div>
       </div>
       <md-divider ></md-divider>
     </md-list-item>

@@ -1,4 +1,5 @@
 let usersService = function usersServiceFn ($http, $q) {
+  const url = 'http://119.vlabs.knu.ua:4243';
   var exports = {};
 
     exports.getContainers = function () {
@@ -32,6 +33,34 @@ let usersService = function usersServiceFn ($http, $q) {
         $http.get(url).then(function (response) { deferred.resolve(response.data); }, function (error) { deferred.reject(error); });
 
         return deferred.promise;
+    };
+    
+    exports.startContainer = function (id) {
+      var deferred = $q.defer();
+      var api_url = '/containers/' + id + '/start';
+      $http.post(url+api_url).then(
+        function(response){
+          deferred.resolve(response);
+        }, 
+        function(error){
+          deferred.reject(error);
+        }
+      );
+      return deferred.promise;
+    };
+    
+    exports.stopContainer = function (id) {
+      var deferred = $q.defer();
+      var api_url = '/containers/' + id + '/stop';
+      $http.post(url+api_url).then(
+        function(response){
+          deferred.resolve(response);
+        }, 
+        function(error){
+          deferred.reject(error);
+        }
+      );
+      return deferred.promise;
     };
 
     return exports;
