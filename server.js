@@ -33,3 +33,6 @@ if (app.get('env') === 'development') {
         return;
     });    
 }
+server.listen(port, function(){
+    console.log('Server create on: ' + port);
+});
