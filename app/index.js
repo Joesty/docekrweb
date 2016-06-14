@@ -8,7 +8,6 @@ import appServices from './services/services.js';
 import appConfiguration from './app.config';
 
 // Single Style Entry Point
-import '../node_modules/angular-material/angular-material.scss';
 
 if (ENVIRONMENT === 'test') {
   console.log('ENV:', ENVIRONMENT);

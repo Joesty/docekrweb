@@ -2,7 +2,7 @@ var express = require('express');
 var app = express();
 var server = require('http').createServer(app);
 var bodyParser = require('body-parser');
-var port = 3000;
+var port = 80;
 var routes = require('./routes');
 
 // var log = require('./log')(module); // winston
@@ -33,7 +33,3 @@ if (app.get('env') === 'development') {
         return;
     });    
 }
-
-server.listen(port, function(){
-    console.log('Server create on: ' + port);
-});
