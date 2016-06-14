@@ -3,7 +3,8 @@
 <head lang="en">
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>My Sweet App</title>
+  <title>Docker UI</title>
+  <link rel="shortcut icon" href="https://docs.docker.com/images/favicon.png" type="image/png">
   <link rel="stylesheet" href="./angular-material.css">
 </head>
 <body ng-app="app">
@@ -14,7 +15,11 @@
   <!-- Router Templates Render Here  -->
   <md-toolbar class="md-accent">
     <h2 class="md-toolbar-tools" layout layout-align="center center">
-      <span>Web ui for Docker</span>
+      <div layout="row" flex="60" layout-align="center center">
+        <div flex layout layout-align="center center"><a href="/">HOME</a></div>
+        <div flex layout layout-align="center center">Docker Web UI</div>
+        <div flex layout layout-align="center center"><md-button aria-label="CREATE CONTAINER"> CREATE CONTAINER </md-button></div>
+      </div>
     </h2>
   </md-toolbar>
   <div layout layout-align="center">

@@ -6,20 +6,18 @@
 <md-content>
   <md-list flex="100">
     <md-subheader class="md-no-sticky">Select VM</md-subheader>
-    <md-list-item class="md-3-line" ng-repeat="container in containers" ng-click="console.log($index)">
+    <md-list-item class="md-3-line" ng-repeat="container in containers">
       <div class="md-list-item-text" flex layout="row">
         <div flex='25' layout="column" layout-align="center center">{{container.Names[0].split('/')[1]}}</div>
         <div flex='25' layout="column" layout-align="center center">{{container.Status}}</div>
         <div flex='25' layout="column" layout-align="center center">{{container.Image}}</div>
-        <div flex='25' layout="column" layout-align="center center">
+        <div flex='25' layout="row" layout-align="center center">
           <md-button ng-if="!container.start" class="md-raised md-primary" ng-click="start(container.Id, $index)">Start</md-button>
           <md-button ng-if="container.start" class="md-raised md-warn" ng-click="stop(container.Id, $index)">Stop</md-button>
           <md-button id="button-id"
                      class="md-accent md-raised md-hue-1"
                      md-ripple-size="auto"
-                     md-no-ink="true"
-                     ng-click="delete(container.Id)"
-                     aria-label="button-label"> button-label </md-button>
+                     ng-click="delete(container.Id)">Delete</md-button>
         </div>
       </div>
       <md-divider ></md-divider>

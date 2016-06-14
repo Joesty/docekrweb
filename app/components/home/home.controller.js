@@ -36,7 +36,7 @@ export default class HomeController {
         }
       );
     };
-    $scope.deleteContainer = function (id){
+    $scope.delete = function (id){
       users.deleteContainer(id).then(
         function(resolve){
           getData();

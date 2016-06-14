@@ -65,8 +65,16 @@ let usersService = function usersServiceFn ($http, $q) {
     
     exports.deleteContainer = function (id) {
       var deferred = $q.defer();
-      var api_url = '/containers/' + id + '?v=1';
-      $http.delete(url+api_url).then(
+      var api_url = '/containers/' + id;
+      var req = {
+        method: 'DELETE',
+        url: url + '/containers/' + id,
+        headers: {
+          'Content-Type': undefined
+        }
+        // data: { test: 'test' }
+      }
+      $http(req).then(
         function(response){
           deferred.resolve(response);
         }, 
