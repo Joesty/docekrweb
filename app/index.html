@@ -6,17 +6,16 @@
   <title>Docker UI</title>
   <link rel="shortcut icon" href="https://docs.docker.com/images/favicon.png" type="image/png">
   <link rel="stylesheet" href="./angular-material.css">
+  <base href="/">
 </head>
 <body ng-app="app">
-
-  <script src="vendor.js"></script>
   <script src="bundle.js"></script>
 
   <!-- Router Templates Render Here  -->
   <md-toolbar class="md-accent">
     <h2 class="md-toolbar-tools" layout layout-align="center center">
       <div layout="row" flex="60" layout-align="center center">
-        <div flex layout layout-align="center center"><a href="/attach">HOME</a></div>
+        <div flex layout layout-align="center center"><a href="/">HOME</a></div>
         <div flex layout layout-align="center center">Docker Web UI</div>
         <div flex layout layout-align="center center"><md-button aria-label="CREATE CONTAINER"> CREATE CONTAINER </md-button></div>
       </div>

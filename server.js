@@ -2,7 +2,7 @@ var express = require('express');
 var app = express();
 var server = require('http').createServer(app);
 var bodyParser = require('body-parser');
-var port = 80;
+var port = 8080;
 var routes = require('./routes');
 
 // var log = require('./log')(module); // winston
@@ -18,6 +18,10 @@ app.use(bodyParser.urlencoded({ extended: false }));
 
 app.use('/', routes);
 
+app.use(function(req, res) {
+    // Use res.sendfile, as it streams instead of reading the file into memory.
+    res.sendfile(__dirname + '/app/index.html');
+});
 //error hendler
 
 app.use(function(req, res, next){

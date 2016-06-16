@@ -4,7 +4,7 @@
   "description": "An Application Shell for generating Angular Applications with Webpack and ES6",
   "main": "app.js",
   "scripts": {
-    "dev": "export NODE_ENV=development && webpack-dev-server --devtool=source-map --progress --colors --content-base app",
+    "dev": "export NODE_ENV=development && webpack --watch --devtool=source-map --progress --colors --content-base app",
     "test": "export NODE_ENV=test && karma start",
     "build": "export NODE_ENV=production && node node_modules/.bin/webpack && cp app/index.html dist/index.html",
     "start": "node server.js" 
