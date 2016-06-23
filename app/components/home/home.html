@@ -12,7 +12,7 @@
         <div flex='25' layout="column" layout-align="center center">{{container.Status}}</div>
         <div flex='20' layout="column" layout-align="center center">{{container.Image}}</div>
         <div flex='35' layout="row" layout-align="center center">
-          <a class="md-button md-hue-1" ng-href="{{'/attach?id='+container.Id}}'">Connect</a>
+          <a class="md-button md-hue-1" ng-disabled="!container.start" ng-href="{{'/attach?id='+container.Id}}'">Connect</a>
           <md-button ng-if="!container.start" class="md-raised md-primary" ng-click="start(container.Id, $index)">Start</md-button>
           <md-button ng-if="container.start" class="md-raised md-warn" ng-click="stop(container.Id, $index)">Stop</md-button>
           <md-button id="button-id"
